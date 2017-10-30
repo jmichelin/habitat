@@ -9,6 +9,10 @@ const app = express();
 app.set('jwtTokenSecret', 'ecosystem');
 app.set('port', (process.env.PORT || 3000));
 
+app.get('/', function(req,res){
+res.send('hello world');
+});
+
 app.use(bodyParser.json());
 app.use('/', routes);
 app.use(express.static(__dirname + '/src'));
